@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../thirdparty/Imagine_System/worker/Imagine_ZooKeeper/include/Watcher.h
+string
+-
+
+../thirdparty/Imagine_System/worker/Imagine_ZooKeeper/include/ZooKeeper.h
+EventLoop.h
+-
+unordered_map
+-
+list
+-
+Watcher.h
+../thirdparty/Imagine_System/worker/Imagine_ZooKeeper/include/Watcher.h
+
+/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/thirdparty/Imagine_System/worker/Imagine_ZooKeeper/src/ZooKeeper.cpp
+ZooKeeper.h
+/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/thirdparty/Imagine_System/worker/Imagine_ZooKeeper/src/ZooKeeper.h
+

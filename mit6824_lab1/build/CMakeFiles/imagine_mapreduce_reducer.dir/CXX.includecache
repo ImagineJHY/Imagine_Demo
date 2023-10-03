@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/src/reducer.cpp
+Reducer.h
+/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/src/Reducer.h
+iostream
+-
+unordered_map
+-
+string
+-
+signal.h
+-
+list
+-
+vector
+-
+

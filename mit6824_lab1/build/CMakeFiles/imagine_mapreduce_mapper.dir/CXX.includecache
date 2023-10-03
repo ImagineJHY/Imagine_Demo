@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/src/mapper.cpp
+iostream
+-
+unordered_map
+-
+string
+-
+signal.h
+-
+memory.h
+-
+sys/socket.h
+-
+sys/types.h
+-
+arpa/inet.h
+-
+sys/epoll.h
+-
+sys/timerfd.h
+-
+sys/types.h
+-
+functional
+-
+Mapper.h
+/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/src/Mapper.h
+
