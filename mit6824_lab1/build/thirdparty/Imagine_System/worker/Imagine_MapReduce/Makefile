@@ -125,21 +125,6 @@ imagine_mapreduce/fast:
 	cd /home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/build && $(MAKE) -f thirdparty/Imagine_System/worker/Imagine_MapReduce/CMakeFiles/imagine_mapreduce.dir/build.make thirdparty/Imagine_System/worker/Imagine_MapReduce/CMakeFiles/imagine_mapreduce.dir/build
 .PHONY : imagine_mapreduce/fast
 
-# Convenience name for target.
-thirdparty/Imagine_System/worker/Imagine_MapReduce/CMakeFiles/init.dir/rule:
-	cd /home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/build && $(MAKE) -f CMakeFiles/Makefile2 thirdparty/Imagine_System/worker/Imagine_MapReduce/CMakeFiles/init.dir/rule
-.PHONY : thirdparty/Imagine_System/worker/Imagine_MapReduce/CMakeFiles/init.dir/rule
-
-# Convenience name for target.
-init: thirdparty/Imagine_System/worker/Imagine_MapReduce/CMakeFiles/init.dir/rule
-
-.PHONY : init
-
-# fast build rule for target.
-init/fast:
-	cd /home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/build && $(MAKE) -f thirdparty/Imagine_System/worker/Imagine_MapReduce/CMakeFiles/init.dir/build.make thirdparty/Imagine_System/worker/Imagine_MapReduce/CMakeFiles/init.dir/build
-.PHONY : init/fast
-
 src/KVBuffer.o: src/KVBuffer.cpp.o
 
 .PHONY : src/KVBuffer.o
@@ -255,9 +240,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... imagine_mapreduce"
-	@echo "... init"
+	@echo "... edit_cache"
 	@echo "... src/KVBuffer.o"
 	@echo "... src/KVBuffer.i"
 	@echo "... src/KVBuffer.s"

@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/thirdparty/Imagine_System/worker/Imagine_MapReduce/include -I/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/thirdparty/Imagine_System/worker/Imagine_Rpc/include -I/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/thirdparty/Imagine_System/worker/Imagine_ZooKeeper/include -I/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/thirdparty/Imagine_System/worker/Imagine_Muduo/include 
 

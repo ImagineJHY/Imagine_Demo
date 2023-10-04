@@ -15,10 +15,14 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../thirdparty/Imagine_System/worker/Imagine_Rpc/include"
+  "../thirdparty/Imagine_System/worker/Imagine_ZooKeeper/include"
+  "../thirdparty/Imagine_System/worker/Imagine_Muduo/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/build/thirdparty/Imagine_System/worker/Imagine_ZooKeeper/CMakeFiles/imagine_zookeeper.dir/DependInfo.cmake"
+  "/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/build/thirdparty/Imagine_System/worker/Imagine_Muduo/CMakeFiles/imagine_muduo.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

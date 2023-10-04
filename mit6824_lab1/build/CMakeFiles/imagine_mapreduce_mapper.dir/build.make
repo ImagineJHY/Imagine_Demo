@@ -90,10 +90,10 @@ imagine_mapreduce_mapper_EXTERNAL_OBJECTS =
 
 ../bin/imagine_mapreduce_mapper: CMakeFiles/imagine_mapreduce_mapper.dir/src/mapper.cpp.o
 ../bin/imagine_mapreduce_mapper: CMakeFiles/imagine_mapreduce_mapper.dir/build.make
-../bin/imagine_mapreduce_mapper: ../thirdparty/Imagine_System/worker/Imagine_MapReduce/lib/libimagine_mapreduce.so
-../bin/imagine_mapreduce_mapper: ../thirdparty/Imagine_System/worker/Imagine_Rpc/lib/libimagine_rpc.so
-../bin/imagine_mapreduce_mapper: ../thirdparty/Imagine_System/worker/Imagine_ZooKeeper/lib/libimagine_zookeeper.so
-../bin/imagine_mapreduce_mapper: ../thirdparty/Imagine_System/worker/Imagine_Muduo/lib/libimagine_muduo.so
+../bin/imagine_mapreduce_mapper: ../lib/libimagine_mapreduce.so
+../bin/imagine_mapreduce_mapper: ../lib/libimagine_rpc.so
+../bin/imagine_mapreduce_mapper: ../lib/libimagine_zookeeper.so
+../bin/imagine_mapreduce_mapper: ../lib/libimagine_muduo.so
 ../bin/imagine_mapreduce_mapper: CMakeFiles/imagine_mapreduce_mapper.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/imagine_mapreduce_mapper"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/imagine_mapreduce_mapper.dir/link.txt --verbose=$(VERBOSE)

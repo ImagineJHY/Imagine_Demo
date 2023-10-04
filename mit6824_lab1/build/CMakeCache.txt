@@ -221,16 +221,16 @@ IMAGINE_ZOOKEEPER_SOURCE_DIR:STATIC=/home/imagine/MIT6824/Imagine_Demo/mit6824_l
 imagine_demo_lab1_LIB_DEPENDS:STATIC=general;pthread;
 
 //Dependencies for the target
-imagine_mapreduce_LIB_DEPENDS:STATIC=general;pthread;
+imagine_mapreduce_LIB_DEPENDS:STATIC=general;pthread;general;imagine_rpc;
 
 //Dependencies for the target
 imagine_muduo_LIB_DEPENDS:STATIC=general;pthread;
 
 //Dependencies for the target
-imagine_rpc_LIB_DEPENDS:STATIC=general;pthread;
+imagine_rpc_LIB_DEPENDS:STATIC=general;pthread;general;imagine_zookeeper;
 
 //Dependencies for the target
-imagine_zookeeper_LIB_DEPENDS:STATIC=general;pthread;
+imagine_zookeeper_LIB_DEPENDS:STATIC=general;pthread;general;imagine_muduo;
 
 
 ########################

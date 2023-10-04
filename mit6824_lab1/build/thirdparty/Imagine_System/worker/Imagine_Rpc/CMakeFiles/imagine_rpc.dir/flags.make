@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC
 
 CXX_DEFINES = -Dimagine_rpc_EXPORTS
 
-CXX_INCLUDES = -I/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/thirdparty/Imagine_System/worker/Imagine_Rpc/include 
+CXX_INCLUDES = -I/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/thirdparty/Imagine_System/worker/Imagine_Rpc/include -I/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/thirdparty/Imagine_System/worker/Imagine_ZooKeeper/include -I/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/thirdparty/Imagine_System/worker/Imagine_Muduo/include 
 

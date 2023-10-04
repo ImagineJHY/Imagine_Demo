@@ -10,6 +10,10 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../thirdparty/Imagine_System/worker/Imagine_MapReduce/include"
+  "../thirdparty/Imagine_System/worker/Imagine_Rpc/include"
+  "../thirdparty/Imagine_System/worker/Imagine_ZooKeeper/include"
+  "../thirdparty/Imagine_System/worker/Imagine_Muduo/include"
   )
 
 # Targets to which this target links.

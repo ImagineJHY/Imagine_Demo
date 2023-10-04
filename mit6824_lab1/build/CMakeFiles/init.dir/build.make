@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/build
 include CMakeFiles/init.dir/progress.make
 
 CMakeFiles/init:
-	cd /home/imagine/MIT6824/Imagine_Demo/mit6824_lab1 && python3 init.py
+	cd /home/imagine/MIT6824/Imagine_Demo/mit6824_lab1 && python3 init.py echo Constructing\ PROJECT:\ Starting\ project\ target\ init\ is\ building...
 
 init: CMakeFiles/init
 init: CMakeFiles/init.dir/build.make

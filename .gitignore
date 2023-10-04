@@ -1,17 +1,19 @@
 ### CMake ###
-/build/CMakeFiles
-CmakeCache.txt
-cmake_install.cmake
+mit6824_lab1/build/bin/
+mit6824_lab1/build/CMakeFiles/
+mit6824_lab1/build/thirdparty/
+mit6824_lab1/build/CMakeCache.txt
+mit6824_lab1/build/cmake_install.cmake
 
 # thirdparty
-/thirdparty/Imagine_System
+mit6824_lab1/thirdparty/Imagine_System/
 
 # lib
 *.bak
 *.so*
 
 # bin
-/bin
+mit6824_lab1/bin/
 
 # vs
 .vscode
