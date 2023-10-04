@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC   -shared -Wl,-soname,libimagine_zookeeper.so -o ../../../../../lib/libimagine_zookeeper.so CMakeFiles/imagine_zookeeper.dir/src/ZooKeeper.cpp.o -Wl,-rpath,/home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/lib -lpthread ../../../../../lib/libimagine_muduo.so -lpthread 
