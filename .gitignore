@@ -6,7 +6,7 @@ mit6824_lab1/build/CMakeCache.txt
 mit6824_lab1/build/cmake_install.cmake
 
 # thirdparty
-mit6824_lab1/thirdparty/Imagine_System/
+mit6824_lab1/thirdparty
 
 # lib
 *.bak
