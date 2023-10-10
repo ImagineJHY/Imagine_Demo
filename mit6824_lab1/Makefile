@@ -18,3 +18,9 @@ clean:
 
 test:
 	find test | grep -vE "^test$$|testfile.txt$$|test\.sh$$" | xargs rm -rf && ./test/test.sh
+
+init_bak:
+	cd build && make init_bak
+
+prepare_bak:
+	cd build && cmake .. && make prepare_bak

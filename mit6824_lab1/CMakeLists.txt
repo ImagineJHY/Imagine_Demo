@@ -38,6 +38,13 @@ add_custom_target(
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} # 在哪个目录下执行命令
 )
 
+add_custom_target(
+    init_bak
+    COMMAND python3 init_bak.py
+    echo "[Constructing PROJECT][Imagine Demo_LAB1]: Starting project target init is building..."
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} # 在哪个目录下执行命令
+)
+
 if(EXISTS ${IMAGINE_SYSTEM_DIR}/CMakeLists.txt)
     add_custom_target(
         prepare
@@ -45,6 +52,13 @@ if(EXISTS ${IMAGINE_SYSTEM_DIR}/CMakeLists.txt)
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} # 在哪个目录下执行命令
     )
     add_dependencies(prepare system_prepare)
+
+    add_custom_target(
+        prepare_bak
+        echo "[Constructing PROJECT][Imagine Demo_LAB1]: thirdparty Imagine_System exists, Starting project target prepare building..."
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} # 在哪个目录下执行命令
+    )
+    add_dependencies(prepare_bak system_prepare_bak)
 
     if(TARGET system_build)
         add_custom_target(

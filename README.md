@@ -1,3 +1,6 @@
+# 非开发人员可直接通过make 项目名构建
+# 构建项目需要保证安装有:cmake make g++ tmux
+
 # 直接构建需要的项目(这里以mit6824_lab1为例)
 make mit_6824_lab1
 

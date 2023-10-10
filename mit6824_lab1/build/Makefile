@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -124,6 +124,19 @@ build/fast:
 .PHONY : build/fast
 
 #=============================================================================
+# Target rules for targets named prepare_bak
+
+# Build rule for target.
+prepare_bak: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prepare_bak
+.PHONY : prepare_bak
+
+# fast build rule for target.
+prepare_bak/fast:
+	$(MAKE) -f CMakeFiles/prepare_bak.dir/build.make CMakeFiles/prepare_bak.dir/build
+.PHONY : prepare_bak/fast
+
+#=============================================================================
 # Target rules for targets named imagine_mapreduce_mapper
 
 # Build rule for target.
@@ -148,6 +161,32 @@ imagine_mapreduce_master: cmake_check_build_system
 imagine_mapreduce_master/fast:
 	$(MAKE) -f CMakeFiles/imagine_mapreduce_master.dir/build.make CMakeFiles/imagine_mapreduce_master.dir/build
 .PHONY : imagine_mapreduce_master/fast
+
+#=============================================================================
+# Target rules for targets named prepare
+
+# Build rule for target.
+prepare: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prepare
+.PHONY : prepare
+
+# fast build rule for target.
+prepare/fast:
+	$(MAKE) -f CMakeFiles/prepare.dir/build.make CMakeFiles/prepare.dir/build
+.PHONY : prepare/fast
+
+#=============================================================================
+# Target rules for targets named imagine_mapreduce_reducer
+
+# Build rule for target.
+imagine_mapreduce_reducer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 imagine_mapreduce_reducer
+.PHONY : imagine_mapreduce_reducer
+
+# fast build rule for target.
+imagine_mapreduce_reducer/fast:
+	$(MAKE) -f CMakeFiles/imagine_mapreduce_reducer.dir/build.make CMakeFiles/imagine_mapreduce_reducer.dir/build
+.PHONY : imagine_mapreduce_reducer/fast
 
 #=============================================================================
 # Target rules for targets named imagine_rpc_zookeeper
@@ -176,43 +215,30 @@ init/fast:
 .PHONY : init/fast
 
 #=============================================================================
-# Target rules for targets named imagine_mapreduce_reducer
+# Target rules for targets named init_bak
 
 # Build rule for target.
-imagine_mapreduce_reducer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 imagine_mapreduce_reducer
-.PHONY : imagine_mapreduce_reducer
+init_bak: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 init_bak
+.PHONY : init_bak
 
 # fast build rule for target.
-imagine_mapreduce_reducer/fast:
-	$(MAKE) -f CMakeFiles/imagine_mapreduce_reducer.dir/build.make CMakeFiles/imagine_mapreduce_reducer.dir/build
-.PHONY : imagine_mapreduce_reducer/fast
+init_bak/fast:
+	$(MAKE) -f CMakeFiles/init_bak.dir/build.make CMakeFiles/init_bak.dir/build
+.PHONY : init_bak/fast
 
 #=============================================================================
-# Target rules for targets named prepare
+# Target rules for targets named prepare_submodule_bak
 
 # Build rule for target.
-prepare: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 prepare
-.PHONY : prepare
+prepare_submodule_bak: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 prepare_submodule_bak
+.PHONY : prepare_submodule_bak
 
 # fast build rule for target.
-prepare/fast:
-	$(MAKE) -f CMakeFiles/prepare.dir/build.make CMakeFiles/prepare.dir/build
-.PHONY : prepare/fast
-
-#=============================================================================
-# Target rules for targets named system_build
-
-# Build rule for target.
-system_build: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 system_build
-.PHONY : system_build
-
-# fast build rule for target.
-system_build/fast:
-	$(MAKE) -f thirdparty/Imagine_System/CMakeFiles/system_build.dir/build.make thirdparty/Imagine_System/CMakeFiles/system_build.dir/build
-.PHONY : system_build/fast
+prepare_submodule_bak/fast:
+	$(MAKE) -f thirdparty/Imagine_System/CMakeFiles/prepare_submodule_bak.dir/build.make thirdparty/Imagine_System/CMakeFiles/prepare_submodule_bak.dir/build
+.PHONY : prepare_submodule_bak/fast
 
 #=============================================================================
 # Target rules for targets named prepare_submodule
@@ -239,6 +265,32 @@ system_prepare: cmake_check_build_system
 system_prepare/fast:
 	$(MAKE) -f thirdparty/Imagine_System/CMakeFiles/system_prepare.dir/build.make thirdparty/Imagine_System/CMakeFiles/system_prepare.dir/build
 .PHONY : system_prepare/fast
+
+#=============================================================================
+# Target rules for targets named system_prepare_bak
+
+# Build rule for target.
+system_prepare_bak: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 system_prepare_bak
+.PHONY : system_prepare_bak
+
+# fast build rule for target.
+system_prepare_bak/fast:
+	$(MAKE) -f thirdparty/Imagine_System/CMakeFiles/system_prepare_bak.dir/build.make thirdparty/Imagine_System/CMakeFiles/system_prepare_bak.dir/build
+.PHONY : system_prepare_bak/fast
+
+#=============================================================================
+# Target rules for targets named system_build
+
+# Build rule for target.
+system_build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 system_build
+.PHONY : system_build
+
+# fast build rule for target.
+system_build/fast:
+	$(MAKE) -f thirdparty/Imagine_System/CMakeFiles/system_build.dir/build.make thirdparty/Imagine_System/CMakeFiles/system_build.dir/build
+.PHONY : system_build/fast
 
 #=============================================================================
 # Target rules for targets named imagine_muduo
@@ -406,18 +458,22 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... build"
+	@echo "... prepare_bak"
 	@echo "... imagine_mapreduce_mapper"
 	@echo "... imagine_mapreduce_master"
+	@echo "... rebuild_cache"
+	@echo "... prepare"
+	@echo "... imagine_mapreduce_reducer"
 	@echo "... imagine_rpc_zookeeper"
 	@echo "... init"
-	@echo "... rebuild_cache"
-	@echo "... imagine_mapreduce_reducer"
-	@echo "... prepare"
-	@echo "... system_build"
+	@echo "... edit_cache"
+	@echo "... init_bak"
+	@echo "... prepare_submodule_bak"
 	@echo "... prepare_submodule"
 	@echo "... system_prepare"
+	@echo "... system_prepare_bak"
+	@echo "... system_build"
 	@echo "... imagine_muduo"
 	@echo "... imagine_zookeeper"
 	@echo "... imagine_rpc"
