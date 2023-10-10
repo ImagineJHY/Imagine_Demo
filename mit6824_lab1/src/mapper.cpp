@@ -41,12 +41,11 @@ int main(int argc, char *argv[])
 
     string port = argv[1];
 
-    Mapper<int, string, string, int> mapper("192.168.83.129", port, nullptr, nullptr, nullptr, nullptr, nullptr, "192.168.83.129", "9999");
+    Mapper<int, string, string, int> mapper("192.168.83.130", port, nullptr, nullptr, nullptr, nullptr, nullptr, "192.168.83.130", "9999");
 
     mapper.loop();
 
-    while (1)
-        ;
+    while (1);
 
     return 0;
 }

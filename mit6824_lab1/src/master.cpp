@@ -48,16 +48,15 @@ int main(int argc, char *argv[])
     // master用9000端口
     string port_ = argv[1];
 
-    MapReduceMaster master("192.168.83.129", port_, "192.168.83.129", "9999");
+    MapReduceMaster master("192.168.83.130", port_, "192.168.83.130", "9999", 5);
     master.loop();
 
     sleep(2);
 
     std::vector<std::string> ddd;
-    ddd.push_back("bbb.txt");
+    ddd.push_back("testfile.txt");
     master.MapReduce(ddd, 5, 40);
-    while (1)
-        ;
+    while (1);
 
     return 0;
 }

@@ -31,9 +31,9 @@ int main(int argc, char *argv[])
     addsig(SIGPIPE, SIG_IGN);
 
     // Reducer用9500端口
-    int port_ = atoi(argv[1]);
+    // int port_ = atoi(argv[1]);
 
-    Imagine_MapReduce::Reducer<string, string> reducer("192.168.83.129", argv[1]);
+    Imagine_MapReduce::Reducer<string, string> reducer("192.168.83.130", argv[1], "192.168.83.130", "9999");
     reducer.loop();
 
     return 0;

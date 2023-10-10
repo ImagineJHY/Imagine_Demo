@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named build
+
+# Build rule for target.
+build: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 build
+.PHONY : build
+
+# fast build rule for target.
+build/fast:
+	$(MAKE) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/build
+.PHONY : build/fast
+
+#=============================================================================
 # Target rules for targets named imagine_mapreduce_mapper
 
 # Build rule for target.
@@ -135,6 +148,19 @@ imagine_mapreduce_master: cmake_check_build_system
 imagine_mapreduce_master/fast:
 	$(MAKE) -f CMakeFiles/imagine_mapreduce_master.dir/build.make CMakeFiles/imagine_mapreduce_master.dir/build
 .PHONY : imagine_mapreduce_master/fast
+
+#=============================================================================
+# Target rules for targets named imagine_rpc_zookeeper
+
+# Build rule for target.
+imagine_rpc_zookeeper: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 imagine_rpc_zookeeper
+.PHONY : imagine_rpc_zookeeper
+
+# fast build rule for target.
+imagine_rpc_zookeeper/fast:
+	$(MAKE) -f CMakeFiles/imagine_rpc_zookeeper.dir/build.make CMakeFiles/imagine_rpc_zookeeper.dir/build
+.PHONY : imagine_rpc_zookeeper/fast
 
 #=============================================================================
 # Target rules for targets named init
@@ -174,19 +200,6 @@ prepare: cmake_check_build_system
 prepare/fast:
 	$(MAKE) -f CMakeFiles/prepare.dir/build.make CMakeFiles/prepare.dir/build
 .PHONY : prepare/fast
-
-#=============================================================================
-# Target rules for targets named build
-
-# Build rule for target.
-build: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 build
-.PHONY : build
-
-# fast build rule for target.
-build/fast:
-	$(MAKE) -f CMakeFiles/build.dir/build.make CMakeFiles/build.dir/build
-.PHONY : build/fast
 
 #=============================================================================
 # Target rules for targets named system_build
@@ -279,6 +292,33 @@ imagine_mapreduce/fast:
 	$(MAKE) -f thirdparty/Imagine_System/worker/Imagine_MapReduce/CMakeFiles/imagine_mapreduce.dir/build.make thirdparty/Imagine_System/worker/Imagine_MapReduce/CMakeFiles/imagine_mapreduce.dir/build
 .PHONY : imagine_mapreduce/fast
 
+src/RpcZooKeeperMain.o: src/RpcZooKeeperMain.cpp.o
+
+.PHONY : src/RpcZooKeeperMain.o
+
+# target to build an object file
+src/RpcZooKeeperMain.cpp.o:
+	$(MAKE) -f CMakeFiles/imagine_rpc_zookeeper.dir/build.make CMakeFiles/imagine_rpc_zookeeper.dir/src/RpcZooKeeperMain.cpp.o
+.PHONY : src/RpcZooKeeperMain.cpp.o
+
+src/RpcZooKeeperMain.i: src/RpcZooKeeperMain.cpp.i
+
+.PHONY : src/RpcZooKeeperMain.i
+
+# target to preprocess a source file
+src/RpcZooKeeperMain.cpp.i:
+	$(MAKE) -f CMakeFiles/imagine_rpc_zookeeper.dir/build.make CMakeFiles/imagine_rpc_zookeeper.dir/src/RpcZooKeeperMain.cpp.i
+.PHONY : src/RpcZooKeeperMain.cpp.i
+
+src/RpcZooKeeperMain.s: src/RpcZooKeeperMain.cpp.s
+
+.PHONY : src/RpcZooKeeperMain.s
+
+# target to generate assembly for a file
+src/RpcZooKeeperMain.cpp.s:
+	$(MAKE) -f CMakeFiles/imagine_rpc_zookeeper.dir/build.make CMakeFiles/imagine_rpc_zookeeper.dir/src/RpcZooKeeperMain.cpp.s
+.PHONY : src/RpcZooKeeperMain.cpp.s
+
 src/mapper.o: src/mapper.cpp.o
 
 .PHONY : src/mapper.o
@@ -367,13 +407,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... build"
 	@echo "... imagine_mapreduce_mapper"
 	@echo "... imagine_mapreduce_master"
+	@echo "... imagine_rpc_zookeeper"
 	@echo "... init"
 	@echo "... rebuild_cache"
 	@echo "... imagine_mapreduce_reducer"
 	@echo "... prepare"
-	@echo "... build"
 	@echo "... system_build"
 	@echo "... prepare_submodule"
 	@echo "... system_prepare"
@@ -381,6 +422,9 @@ help:
 	@echo "... imagine_zookeeper"
 	@echo "... imagine_rpc"
 	@echo "... imagine_mapreduce"
+	@echo "... src/RpcZooKeeperMain.o"
+	@echo "... src/RpcZooKeeperMain.i"
+	@echo "... src/RpcZooKeeperMain.s"
 	@echo "... src/mapper.o"
 	@echo "... src/mapper.i"
 	@echo "... src/mapper.s"

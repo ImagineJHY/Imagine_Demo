@@ -22,3 +22,6 @@ make build
 
 # 一键构建项目
 make all
+
+# 一键测试项目(这里以mit6824_lab1为例)
+make test_mit6824_lab1
