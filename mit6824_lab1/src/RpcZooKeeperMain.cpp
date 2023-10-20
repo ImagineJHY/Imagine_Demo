@@ -6,9 +6,9 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
-#include "RpcServer.h"
-#include "RpcClient.h"
-#include "RpcZooKeeper.h"
+#include "Imagine_Rpc/RpcServer.h"
+#include "Imagine_Rpc/RpcClient.h"
+#include "Imagine_Rpc/RpcZooKeeper.h"
 
 #include <sys/epoll.h>
 #include <sys/timerfd.h>
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     // cout<<Rpc::ConvertIpFromNetToString(ip)<<endl;
     // cout<<po<<endl;
     // cout<<Rpc::ConvertPortFromNetToString(po)<<endl;
-    ZooKeeper *keeper = new RpcZooKeeper("192.168.83.130", "9999");
+    ZooKeeper *keeper = new RpcZooKeeper("../config/zookeeper_profile.yaml");
     keeper->loop();
 
     delete keeper;

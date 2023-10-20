@@ -11,7 +11,7 @@
 #include <sys/timerfd.h>
 #include <sys/types.h>
 #include <functional>
-#include "MapReduceMaster.h"
+#include "Imagine_MapReduce/MapReduceMaster.h"
 
 using namespace std;
 using namespace Imagine_MapReduce;
@@ -48,11 +48,10 @@ int main(int argc, char *argv[])
     // master用9000端口
     string port_ = argv[1];
 
-    MapReduceMaster master("192.168.83.130", port_, "192.168.83.130", "9999", 5);
+    MapReduceMaster master("../config/master_profile.yaml");
     master.loop();
 
     sleep(2);
-
     std::vector<std::string> ddd;
     ddd.push_back("testfile.txt");
     master.MapReduce(ddd, 5, 40);

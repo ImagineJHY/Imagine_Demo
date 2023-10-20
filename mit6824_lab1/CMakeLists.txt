@@ -15,6 +15,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 
 set(IS_MAKE_PROJECT true)
 set(IMAGINE_SYSTEM_DIR ${PROJECT_SOURCE_DIR}/thirdparty/Imagine_System)
+set(IMAGINE_TOOL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/Imagine_Tool)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 set(IMAGINE_LIB_WORKER_DIR ${PROJECT_SOURCE_DIR}/thirdparty/Imagine_System/worker)
 
@@ -23,6 +24,13 @@ if(EXISTS ${IMAGINE_SYSTEM_DIR}/CMakeLists.txt)
     add_subdirectory(${IMAGINE_SYSTEM_DIR})
 else()
     message("[Constructing PROJECT][Imagine Demo_LAB1]: thirdparty Imagine_System NOT exists, cin make init to init it!")
+endif()
+
+if(EXISTS ${IMAGINE_TOOL_DIR}/CMakeLists.txt)
+    add_subdirectory(${IMAGINE_TOOL_DIR})
+    message("[Constructing LIB][Imagine MapReduce]: thirdparty Imagine_Tool exists, add subModule...")
+else()
+    message("[Constructing LIB][Imagine MapReduce]: thirdparty Imagine_Tool NOT exists, cin make init to init it!")
 endif()
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
@@ -38,27 +46,13 @@ add_custom_target(
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} # 在哪个目录下执行命令
 )
 
-add_custom_target(
-    init_bak
-    COMMAND python3 init_bak.py
-    echo "[Constructing PROJECT][Imagine Demo_LAB1]: Starting project target init is building..."
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} # 在哪个目录下执行命令
-)
-
-if(EXISTS ${IMAGINE_SYSTEM_DIR}/CMakeLists.txt)
+if(EXISTS ${IMAGINE_SYSTEM_DIR}/CMakeLists.txt AND EXISTS ${IMAGINE_TOOL_DIR}/CMakeLists.txt)
     add_custom_target(
         prepare
         echo "[Constructing PROJECT][Imagine Demo_LAB1]: thirdparty Imagine_System exists, Starting project target prepare building..."
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} # 在哪个目录下执行命令
     )
-    add_dependencies(prepare system_prepare)
-
-    add_custom_target(
-        prepare_bak
-        echo "[Constructing PROJECT][Imagine Demo_LAB1]: thirdparty Imagine_System exists, Starting project target prepare building..."
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} # 在哪个目录下执行命令
-    )
-    add_dependencies(prepare_bak system_prepare_bak)
+    add_dependencies(prepare system_prepare tool_prepare)
 
     if(TARGET system_build)
         add_custom_target(
@@ -70,11 +64,7 @@ if(EXISTS ${IMAGINE_SYSTEM_DIR}/CMakeLists.txt)
         target_link_libraries(imagine_mapreduce_mapper imagine_mapreduce)
         target_link_libraries(imagine_mapreduce_reducer imagine_mapreduce)
         target_link_libraries(imagine_rpc_zookeeper imagine_rpc)
-        add_dependencies(imagine_mapreduce_master system_build)
-        add_dependencies(imagine_mapreduce_mapper system_build)
-        add_dependencies(imagine_mapreduce_reducer system_build)
-        add_dependencies(imagine_rpc_zookeeper system_build)
-        add_dependencies(build imagine_mapreduce_master imagine_mapreduce_mapper imagine_mapreduce_reducer imagine_rpc_zookeeper)
+        add_dependencies(build imagine_mapreduce_master imagine_mapreduce_mapper imagine_mapreduce_reducer imagine_rpc_zookeeper system_build)
     else()
         message("[Constructing PROJECT][Imagine Demo_LAB1]: Please cin make prepare to make every subModule ready!")
     endif()

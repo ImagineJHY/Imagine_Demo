@@ -1,0 +1,16 @@
+ip: 192.168.83.130
+port: 9502
+zookeeper_ip: 192.168.83.130
+zookeeper_port: 9999
+max_channel_num: 10000
+reducer_num: 5
+split_size: 40
+file_list: testfile.txt
+thread_num: 5
+log_name: reducer.log
+log_path: /home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/test/log/
+max_log_file_size: 104857600
+async_log: false
+singleton_log_mode: true
+log_title: Reducer
+log_with_timestamp: true
