@@ -11,7 +11,8 @@
 #include <sys/timerfd.h>
 #include <sys/types.h>
 #include <functional>
-#include "Mapper.h"
+
+#include "Imagine_MapReduce/Imagine_MapReduce.h"
 
 using namespace std;
 using namespace Imagine_MapReduce;
@@ -41,7 +42,7 @@ int main(int argc, char *argv[])
 
     string port = argv[1];
 
-    Mapper<int, string, string, int> mapper("192.168.83.130", port, nullptr, nullptr, nullptr, nullptr, nullptr, "192.168.83.130", "9999");
+    Mapper<int, string, string, int> mapper("../config/mapper_profile.yaml");
 
     mapper.loop();
 

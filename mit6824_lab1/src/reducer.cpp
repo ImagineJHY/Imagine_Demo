@@ -1,4 +1,4 @@
-#include "Reducer.h"
+#include "Imagine_MapReduce/Imagine_MapReduce.h"
 
 #include <iostream>
 #include <unordered_map>
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     // Reducer用9500端口
     // int port_ = atoi(argv[1]);
 
-    Imagine_MapReduce::Reducer<string, string> reducer("192.168.83.130", argv[1], "192.168.83.130", "9999");
+    Imagine_MapReduce::Reducer<string, string> reducer(argv[1]);
     reducer.loop();
 
     return 0;

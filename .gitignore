@@ -11,6 +11,7 @@ mit6824_lab1/thirdparty
 # lib
 *.bak
 *.so*
+*.a*
 
 # bin
 mit6824_lab1/bin/
