@@ -12,7 +12,7 @@
 #include <sys/types.h>
 #include <functional>
 
-#include "Imagine_MapReduce/Mapper.h"
+#include "Imagine_MapReduce/Imagine_MapReduce.h"
 
 using namespace std;
 using namespace Imagine_MapReduce;

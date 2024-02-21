@@ -4,7 +4,7 @@ zookeeper_ip: 192.168.83.130
 zookeeper_port: 9999
 max_channel_num: 10000
 reducer_num: 5
-split_size: 40
+split_size: 500
 file_list: testfile.txt
 thread_num: 5
 log_name: master.log

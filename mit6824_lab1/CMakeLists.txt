@@ -12,6 +12,7 @@ message("[Constructing PROJECT][Imagine Demo_LAB1]: Starting project building, p
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 
+set(IMAGINE_TARGET_LIB "ALL")
 set(IS_MAKE_PROJECT true)
 set(IMAGINE_SYSTEM_DIR ${PROJECT_SOURCE_DIR}/thirdparty/Imagine_System)
 set(IMAGINE_TOOL_DIR ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/Imagine_Tool)
@@ -19,10 +20,10 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 set(IMAGINE_LIB_WORKER_DIR ${PROJECT_SOURCE_DIR}/thirdparty/Imagine_System/worker)
 
 if(EXISTS ${IMAGINE_TOOL_DIR}/CMakeLists.txt)
+    message("[Constructing PROJECT][Imagine Demo]: thirdparty Imagine_Tool exists, add subModule...")
     add_subdirectory(${IMAGINE_TOOL_DIR})
-    message("[Constructing LIB][Imagine MapReduce]: thirdparty Imagine_Tool exists, add subModule...")
 else()
-    message("[Constructing LIB][Imagine MapReduce]: thirdparty Imagine_Tool NOT exists, cin make init to init it!")
+    message("[Constructing PROJECT][Imagine Demo]: thirdparty Imagine_Tool NOT exists, cin make init to init it!")
 endif()
 
 if(EXISTS ${IMAGINE_SYSTEM_DIR}/CMakeLists.txt)

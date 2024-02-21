@@ -24,7 +24,7 @@ endif
 	cd ${tool_file_name} && make prepare
 
 build:
-	cd build && cmake .. && make imagine_muduo
+	cd build && cmake .. && make
 
 clean:
 	cd build && make clean
@@ -32,4 +32,4 @@ clean:
 # 目前只支持一个mapper进行工作, 因为目前代码中使用相对路径, 对于运行在不同路径上的mapper, 暂时没有保证如何获取正确路径
 
 test:
-	find test | grep -vE "^test$$|testfile.txt$$|test\.sh$$" | xargs rm -rf && ./test/test.sh
+	find test | grep -vE "^test$$|testfile.txt$$|testfile.txt.bak&&|test\.sh$$" | xargs rm -rf && ./test/test.sh

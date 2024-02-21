@@ -11,7 +11,7 @@
 #include <sys/timerfd.h>
 #include <sys/types.h>
 #include <functional>
-#include "Imagine_MapReduce/MapReduceMaster.h"
+#include "Imagine_MapReduce/Imagine_MapReduce.h"
 
 using namespace std;
 using namespace Imagine_MapReduce;
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     sleep(2);
     std::vector<std::string> ddd;
     ddd.push_back("testfile.txt");
-    master.MapReduce(ddd, 5, 40);
+    master.MapReduce(ddd, 5);
     while (1);
 
     return 0;

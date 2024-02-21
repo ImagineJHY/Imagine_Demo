@@ -1,3 +1,5 @@
+#include "Imagine_Rpc/Imagine_Rpc.h"
+
 #include <iostream>
 #include <unordered_map>
 #include <string>
@@ -6,9 +8,6 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
-#include "Imagine_Rpc/RpcServer.h"
-#include "Imagine_Rpc/RpcClient.h"
-#include "Imagine_Rpc/RpcZooKeeper.h"
 
 #include <sys/epoll.h>
 #include <sys/timerfd.h>
@@ -48,10 +47,8 @@ int main(int argc, char *argv[])
     // cout<<Rpc::ConvertIpFromNetToString(ip)<<endl;
     // cout<<po<<endl;
     // cout<<Rpc::ConvertPortFromNetToString(po)<<endl;
-    ZooKeeper *keeper = new RpcZooKeeper("../config/zookeeper_profile.yaml");
-    keeper->loop();
-
-    delete keeper;
+    Imagine_Rpc::RpcZooKeeperBuilder builder("../config/zookeeper_profile.yaml");
+    builder.Start();
 
     return 0;
 }

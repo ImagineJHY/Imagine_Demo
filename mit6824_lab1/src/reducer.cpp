@@ -1,4 +1,4 @@
-#include "Imagine_MapReduce/Reducer.h"
+#include "Imagine_MapReduce/Imagine_MapReduce.h"
 
 #include <iostream>
 #include <unordered_map>
