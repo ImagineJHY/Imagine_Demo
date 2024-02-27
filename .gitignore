@@ -21,3 +21,5 @@ mit6824_lab1/bin/
 
 # test
 mit6824_lab1/test/
+!mit6824_lab1/test/test.sh
+!mit6824_lab1/test/testfile.txt

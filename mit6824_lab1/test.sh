@@ -1,27 +1,38 @@
 #!/bin/bash
 
-bin_dir = ../bin/
+bin_dir=../../bin/
 
-mkdir zookeeper
-tmux new-session -d -s zk -c "./zookeeper/" "./${bin_dir}/imagine_mapreduce_zookeeper" 9999
+mkdir ./test/log
 
-mkdir mapper
-tmux new-session -d -s mapper -c "${bin_dir}" "./${bin_dir}/imagine_mapreduce_mapper" 8999
+mkdir ./test/zookeeper
+cp ./config/zookeeper_profile.yaml ./test/zookeeper
+tmux new-session -d -s zk -c "./test/zookeeper/" "./${bin_dir}/imagine_rpc_zookeeper" ./zookeeper_profile.yaml
 
-mkdir reducer1
-tmux new-session -d -s reducer1 -c "${bin_dir}" "./${bin_dir}/imagine_mapreduce_reducer" 9501
+mkdir ./test/mapper
+cp ./test/testfile.txt ./test/mapper/
+cp ./config/mapper_profile.yaml ./test/mapper
+tmux new-session -d -s mapper -c "./test/mapper" "./${bin_dir}/imagine_mapreduce_mapper" mapper_profile.yaml
 
-mkdir reducer2
-tmux new-session -d -s reducer2 -c "${bin_dir}" "./${bin_dir}/imagine_mapreduce_reducer" 9502
+mkdir ./test/reducer1
+cp ./config/reducer1_profile.yaml ./test/reducer1
+tmux new-session -d -s reducer1 -c "./test/reducer1" "./${bin_dir}/imagine_mapreduce_reducer" "reducer1_profile.yaml"
 
-mkdir reducer3
-tmux new-session -d -s reducer3 -c "${bin_dir}" "./${bin_dir}/imagine_mapreduce_reducer" 9503
+mkdir ./test/reducer2
+cp ./config/reducer2_profile.yaml ./test/reducer2
+tmux new-session -d -s reducer2 -c "./test/reducer2" "./${bin_dir}/imagine_mapreduce_reducer" "reducer2_profile.yaml"
 
-mkdir reducer4
-tmux new-session -d -s reducer4 -c "${bin_dir}" "./${bin_dir}/imagine_mapreduce_reducer" 9504
+mkdir ./test/reducer3
+cp ./config/reducer3_profile.yaml ./test/reducer3
+tmux new-session -d -s reducer3 -c "./test/reducer3" "./${bin_dir}/imagine_mapreduce_reducer" "reducer3_profile.yaml"
 
-mkdir reducer5
-tmux new-session -d -s reducer5 -c "${bin_dir}" "./${bin_dir}/imagine_mapreduce_reducer" 9505
+mkdir ./test/reducer4
+cp ./config/reducer4_profile.yaml ./test/reducer4
+tmux new-session -d -s reducer4 -c "./test/reducer4" "./${bin_dir}/imagine_mapreduce_reducer" "reducer4_profile.yaml"
 
-mkdir master
-tmux new-session -d -s master -c "${bin_dir}" "./${bin_dir}/imagine_mapreduce_master" 9000
+mkdir ./test/reducer5
+cp ./config/reducer5_profile.yaml ./test/reducer5
+tmux new-session -d -s reducer5 -c "./test/reducer5" "./${bin_dir}/imagine_mapreduce_reducer" "reducer5_profile.yaml"
+
+mkdir ./test/master
+cp ./config/master_profile.yaml ./test/master
+tmux new-session -d -s master -c "./test/master" "./${bin_dir}/imagine_mapreduce_master" "./master_profile.yaml"

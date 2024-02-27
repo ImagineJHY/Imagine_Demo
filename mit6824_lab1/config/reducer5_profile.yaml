@@ -8,7 +8,7 @@ split_size: 40
 file_list: testfile.txt
 thread_num: 5
 log_name: reducer.log
-log_path: /home/imagine/MIT6824/Imagine_Demo/mit6824_lab1/test/log/
+log_path: ../log/
 max_log_file_size: 104857600
 async_log: false
 singleton_log_mode: true

@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
     // cout<<Rpc::ConvertIpFromNetToString(ip)<<endl;
     // cout<<po<<endl;
     // cout<<Rpc::ConvertPortFromNetToString(po)<<endl;
-    Imagine_Rpc::RpcZooKeeperBuilder builder("../config/zookeeper_profile.yaml");
+    Imagine_Rpc::RpcZooKeeperBuilder builder(argv[1]);
     builder.Start();
 
     return 0;

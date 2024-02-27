@@ -12,6 +12,7 @@ int main()
     int read_fd = open("testfile.txt.bak", O_RDWR, 0777);
     int ret;
     char c;
+    char r = '\r';
     while((ret = read(read_fd, &c, 1))) {
         if (c == ' ') {
             continue;
@@ -21,6 +22,7 @@ int main()
             }
             if (c == '\n') {
                 printf("here2\n");
+                write(write_fd, &r, 1);
             }
             write(write_fd, &c, 1);
         }

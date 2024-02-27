@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     // master用9000端口
     string port_ = argv[1];
 
-    MapReduceMaster master("../config/master_profile.yaml");
+    MapReduceMaster master(argv[1]);
     master.loop();
 
     sleep(2);

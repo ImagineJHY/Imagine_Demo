@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
     string port = argv[1];
 
-    Mapper<int, string, string, int> mapper("../config/mapper_profile.yaml");
+    Mapper<int, string, string, int> mapper(argv[1]);
 
     mapper.loop();
 
