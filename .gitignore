@@ -6,7 +6,7 @@ mit6824_lab1/build/CMakeCache.txt
 mit6824_lab1/build/cmake_install.cmake
 
 # thirdparty
-mit6824_lab1/thirdparty
+mit6824_lab1/thirdparty/
 
 # lib
 *.bak
@@ -14,12 +14,12 @@ mit6824_lab1/thirdparty
 *.a*
 
 # bin
-mit6824_lab1/bin/
+mit6824_lab1/bin/*
 
 # vs
 .vscode
 
 # test
-mit6824_lab1/test/
+mit6824_lab1/test/*
 !mit6824_lab1/test/test.sh
 !mit6824_lab1/test/testfile.txt
