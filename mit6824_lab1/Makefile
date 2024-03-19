@@ -23,6 +23,9 @@ endif
 	cd ${system_file_name} && make prepare
 	cd ${tool_file_name} && make prepare
 
+proto_init:
+	cd thirdparty/Imagine_System && make proto_init
+
 build:
 	cd build && cmake .. && make
 
